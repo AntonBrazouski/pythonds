@@ -6,6 +6,8 @@ def divideBy2(decNumber):
 
     while decNumber > 0:
         rem = decNumber % 2
+        print(rem, decNumber)
+
         remstack.push(rem)
         decNumber = decNumber // 2
 
