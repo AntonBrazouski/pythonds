@@ -17,6 +17,7 @@ def infixToPostfix(infixexpr):
     tokenList = infixexpr.split()
 
     for token in tokenList:
+
         if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" or token in "0123456789":
             postfixList.append(token)
         elif token == '(':
@@ -28,9 +29,11 @@ def infixToPostfix(infixexpr):
                 topToken = opStack.pop()
         else:
             while (not opStack.isEmpty()) and \
-            (prec[opStack.peek()] >= prec[token]):
+                (prec[opStack.peek()] >= prec[token]):
                 postfixList.append(opStack.pop())
             opStack.push(token)
+
+        print(f"token = {token} -- postfixList = {postfixList} -- opStack = {opStack}")
 
     while not opStack.isEmpty():
         postfixList.append(opStack.pop())
