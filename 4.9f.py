@@ -1,5 +1,4 @@
-# error handling
-# 4.9 Inflix, Prefix and Postfix Expressions
+# q-5
 
 from stack import Stack
 
@@ -22,6 +21,7 @@ def fixError(astring):
 def infixToPostfix(infixexpr):
     prec = {}
 
+    prec["^"] = 4
     prec["*"] = 3
     prec["/"] = 3
     prec["+"] = 2
@@ -62,3 +62,4 @@ print(infixToPostfix("A * B + C * D"))
 print(infixToPostfix("( A + B ) * C - ( D - E ) * ( F + G )"))
 
 print(infixToPostfix("(A + B ) * C - ( D - E ) * ( F + G )")) # intentional error
+print(infixToPostfix("5 * 3 ^ (4 - 2)")) # Q-5
